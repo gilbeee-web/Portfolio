@@ -1,7 +1,22 @@
-import { ArrowRight, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { ArrowRight, Menu, Moon, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar(){
+
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 0);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
 
     const [isOpen, setIsOpen] = useState(false);
@@ -11,55 +26,71 @@ export default function Navbar(){
     }
 
     return (
-        <nav className="w-full sticky top-0 bg-white h-20 py-6 z-50 border border-gray-50 shadow-xs">
+        <nav 
+            className={`w-full sticky top-0 h-20 py-5 z-50 bg-white dark:bg-gray-950 dark:text-white transition-colors duration-300 ${
+                isScrolled
+                    ? "border-b border-gray-200 dark:border-gray-800"
+                    : "border-b border-transparent"
+            }`}
+        >
             
-            <div className="mx-auto max-w-[80%] px-8 flex justify-between items-center">
+            <div className="mx-auto max-w-4xl md:max-w-5xl lg:max-w-7xl px-4 sm:px-6 lg:px-8 flex justify-between items-center">
 
                 {/* Logo */}
                 <a
                     href="#hero"
-                    className="font-mono text-blue-500 text-lg font-semibold"
+                    className="font-mono text-lg md:text-xl font-bold"
                 >
-                    GilbeeDev
+                    Gil<span className="text-blue-500">Dev</span>
                 </a>
 
                 {/* Desktop Nav bar */}
-                <div className="hidden md:flex gap-x-8 items-center">
+                <div className="hidden lg:flex gap-x-8 items-center">
 
-                    <a href="#about" className="font-mono hover:opacity-60">
+                    <a href="#about" className="font-mono font-bold text-lg text-gray-500 hover:bg-gray-100 hover:text-black rounded-full py-2 px-4 dark:text-white">
                         About
                     </a>
 
-                    <a href="#skills" className="font-mono hover:opacity-60">
+                    <a href="#skills" className="font-mono font-bold text-lg text-gray-500 hover:bg-gray-100 hover:text-black rounded-full py-2 px-4 dark:text-white">
                         Stacks
                     </a>
 
-                    <a href="#projects" className="font-mono hover:opacity-60">
+                    <a href="#projects" className="font-mono font-bold text-lg text-gray-500 hover:bg-gray-100 hover:text-black rounded-full py-2 px-4 dark:text-white">
                         Projects
                     </a>
 
-                    <a href="#services" className="font-mono hover:opacity-60">
+                    <a href="#services" className="font-mono font-bold text-lg text-gray-500 hover:bg-gray-100 hover:text-black rounded-full py-2 px-4 dark:text-white">
                         Services
                     </a>
+                </div>
 
+                <div className="flex gap-x-5 items-center">
                     <a
                         href="#contact"
-                        className="px-3 py-2 bg-blue-500 rounded-md hover:opacity-60 flex gap-x-2 items-center"
+                        className="hidden md:flex px-5 py-3 bg-blue-500 rounded-full hover:bg-blue-400 flex gap-x-2 items-center"
                     >
-                        <span className="text-white font-mono font-semibold ">Let's Talk</span>
-                        <ArrowRight size={15} color="white" strokeWidth={2}/>
+                        <span className="text-white font-semibold text-sm lg:text-lg">Let's Talk</span>
+                        <ArrowRight 
+                            className="w-3 h-3 sm:w-4 sm:h-4 lg:w-6 lg:h-6" 
+                            color="white" 
+                            strokeWidth={2}
+                        />
                     </a>
+
+                    <ThemeToggle />
+                    
+                    {/* Mobile Menu Button */}
+                    <button
+                        onClick={() => setIsOpen(!isOpen)}
+                        className="lg:hidden cursor-pointer"
+                        aria-label="Toggle menu"
+                    >
+                        {isOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7"/> : <Menu className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7" />}
+                    </button>
 
                 </div>
 
-                {/* Mobile Menu Button */}
-                <button
-                    onClick={() => setIsOpen(!isOpen)}
-                    className="md:hidden cursor-pointer"
-                    aria-label="Toggle menu"
-                >
-                    {isOpen ? <X size={28} /> : <Menu size={28} />}
-                </button>
+                
 
             </div>
 
