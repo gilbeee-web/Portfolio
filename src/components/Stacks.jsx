@@ -63,7 +63,7 @@ export default function Stacks({ id }) {
                             key={item.name}
                             custom={i}
                             variants={itemPop}
-                            className="flex flex-col lg:flex-row items-center gap-3 rounded-xl border border-gray-100 p-5 md:p-8 bg-blue-50 dark:bg-gray-900 dark:text-gray-100"
+                            className="flex flex-col lg:flex-row items-center gap-3 rounded-xl border border-gray-100 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 p-5 md:p-8 bg-blue-50 dark:bg-gray-900 dark:text-gray-100"
                         >
                             <img
                                 src={item.icon}

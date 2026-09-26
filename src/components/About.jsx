@@ -78,7 +78,7 @@ export default function About({ id }) {
                     </motion.div>
 
                     <motion.div
-                        className="flex flex-col gap-x-8 gap-y-5 md:gap-y-8 bg-blue-50 p-5 rounded-xl border border-gray-100 dark:bg-gray-900"
+                        className="flex flex-col gap-x-8 gap-y-5 md:gap-y-8 bg-blue-50 p-5 rounded-xl border border-gray-100 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.2 }}

@@ -96,7 +96,7 @@ export default function Navbar(){
 
             {/* Mobile Menu */}
             <div
-                className={`fixed top-20 left-0 right-0 h-[calc(100vh-80px)] w-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out lg:hidden ${
+                className={`fixed top-20 left-0 right-0 h-[calc(100vh-80px)] w-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out dark:bg-gray-950 dark:text-white lg:hidden ${
                     isOpen ? "translate-y-0" : "-translate-y-full hidden"
                 }`}
             >

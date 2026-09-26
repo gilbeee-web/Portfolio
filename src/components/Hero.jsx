@@ -58,9 +58,13 @@ export default function Hero({ id }) {
                             View Projects <span><ArrowRight size={15} /></span>
                         </a>
 
-                        <button className="bg-white border border-gray-300 dark:border-gray-50 hover:bg-gray-50 rounded-full font-semibold text-sm md:text-lg lg:text-lg px-3 py-2 md:px-5 md:py-3 lg:py-5 lg:px-8 flex gap-x-1 items-center cursor-pointer dark:bg-gray-950 dark:hover:bg-gray-900">
+                        <a
+                            className="bg-white border border-gray-300 dark:border-gray-50 hover:bg-gray-50 rounded-full font-semibold text-sm md:text-lg lg:text-lg px-3 py-2 md:px-5 md:py-3 lg:py-5 lg:px-8 flex gap-x-1 items-center cursor-pointer dark:bg-gray-950 dark:hover:bg-gray-900"
+                            download="gilbert-resume.docx"
+                            href="/gilbert-resume.docx" 
+                        >
                             Download CV <span><Download size={15} /></span>
-                        </button>
+                        </a>
                     </motion.div>
                 </div>
 
@@ -70,7 +74,7 @@ export default function Hero({ id }) {
                     transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
                 >
                     <div className="relative p-5 bg-blue-50 dark:bg-gray-900 rounded-lg border border-blue-50 dark:border-none min-w-60 min-h-80 md:min-w-120 md:min-h-150 lg:min-w-120 lg:min-h-150">
-                        <div className="absolute bg-white border border-gray-200 top-2 md:top-5 left-[-25px] p-2 md:p-5 rounded-xl text-center dark:bg-gray-900 dark:text-gray-400 font-semibold">
+                        <div className="absolute bg-white border border-gray-200 top-2 md:top-5 left-[-25px] p-2 md:p-5 rounded-xl text-center dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 font-semibold">
                             <h1 className="text-xs md:text-sm text-gray-500 font-mono">
                                 <span className="font-bold text-md md:text-xl text-black dark:text-gray-400">3+</span> Projects Shipped
                             </h1>
@@ -84,11 +88,11 @@ export default function Hero({ id }) {
                             />
                         </div>
 
-                        <div className="absolute bg-white border border-gray-200 bottom-15 md:bottom-10 right-[-25px] p-2 md:p-5 rounded-xl text-center dark:bg-gray-900 dark:text-gray-400 font-semibold">
+                        <div className="absolute bg-white border border-gray-200 bottom-15 md:bottom-10 right-[-25px] p-2 md:p-5 rounded-xl text-center dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 font-semibold">
                             <h1 className="text-xs md:text-sm text-gray-500 font-mono">Real world projects</h1>
                         </div>
 
-                        <div className="absolute bg-white border border-gray-200 bottom-[-20px] left-[15px] p-2 md:p-5 rounded-xl text-center dark:bg-gray-900 dark:text-gray-400 font-semibold">
+                        <div className="absolute bg-white border border-gray-200 bottom-[-20px] left-[15px] p-2 md:p-5 rounded-xl text-center dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 font-semibold">
                             <h1 className="text-xs md:text-sm text-gray-500 font-mono">BSIT Graduate</h1>
                         </div>
                     </div>

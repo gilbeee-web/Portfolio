@@ -28,10 +28,10 @@ export default function Contact({ id }) {
     ];
 
     const socials = [
-        { id: 1, type: "Email", img: Mail, value: "gilbertstamaria58@gmail.com" },
-        { id: 2, type: "Facebook", img: "/images/logo/fb.png", value: "https://www.facebook.com/gilbert.stamaria.52" },
-        { id: 3, type: "GitHub", img: "/images/logo/github.png", value: "https://github.com/gilbeee-web" },
-        { id: 4, type: "LinkedIn", img: "/images/logo/linkedin.png", value: "https://www.youtube.com/watch?v=lbSPw7f3FxI&list=RDMMQS04WbSnxok&index=2" },
+        { id: 1, type: "Email", img: Mail, value: "gilbertstamaria58@gmail.com", link: "mailto:gilbertstamaria58@gmail.com" },
+        { id: 2, type: "Facebook", img: "/images/logo/fb.png", value: "facebook.com/gilbert.stamaria", link: "https://www.facebook.com/gilbert.stamaria.52" },
+        { id: 3, type: "GitHub", img: "/images/logo/github.png", value: "github.com/gilbeee-web", link: "https://github.com/gilbeee-web" },
+        { id: 4, type: "LinkedIn", img: "/images/logo/linkedin.png", value: "linkedin.com/in/gilbertstamaria", link: "linkedin.com/in/gilbertstamaria"},
     ]
 
     return (
@@ -100,9 +100,12 @@ export default function Contact({ id }) {
                         variants={container}
                     >
                         {socials.map((social) => (
-                            <motion.div
-                                className="border-t border-gray-300 flex justify-between py-3 px-3 cursor-pointer hover:bg-white group dark:hover:bg-gray-700"
+                            <motion.a
                                 key={social.id}
+                                href={social.link}
+                                target={social.type !== "Email" ? "_blank" : undefined}
+                                rel={social.type !== "Email" ? "noopener noreferrer" : undefined}
+                                className="border-t border-gray-300 flex justify-between py-3 px-3 cursor-pointer hover:bg-white group dark:hover:bg-gray-700"
                                 variants={rowSlide}
                             >
                                 <div className="flex gap-x-8 items-center">
@@ -111,9 +114,18 @@ export default function Contact({ id }) {
                                     </h1>
 
                                     <div className="bg-white min-h-12 w-12 rounded-full flex items-center justify-center">
-                                        {social.type === "Email" ? <social.img size={25} className="dark:text-black"/>
-                                            : <img src={social.img} alt={`${social.type} logo`} className="object-contain h-10 w-10" />
-                                        }
+                                        {social.type === "Email" ? (
+                                            <social.img
+                                                size={25}
+                                                className="dark:text-black"
+                                            />
+                                        ) : (
+                                            <img
+                                                src={social.img}
+                                                alt={`${social.type} logo`}
+                                                className="object-contain h-10 w-10"
+                                            />
+                                        )}
                                     </div>
 
                                     <h1 className="capitalize text-lg md:text-xl lg:text-2xl font-bold">
@@ -126,23 +138,33 @@ export default function Contact({ id }) {
                                 </div>
 
                                 <div className="flex justify-center items-center">
-                                    <a href="">
-                                        <motion.div
-                                            className="inline-flex"
-                                            whileHover={{ x: 4, y: -4 }}
-                                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                                        >
-                                            <ArrowUpRight size={25} strokeWidth={1} />
-                                        </motion.div>
-                                    </a>
+                                    <motion.div
+                                        className="inline-flex"
+                                        whileHover={{ x: 4, y: -4 }}
+                                        transition={{
+                                            type: "spring",
+                                            stiffness: 300,
+                                            damping: 20,
+                                        }}
+                                    >
+                                        <ArrowUpRight
+                                            size={25}
+                                            strokeWidth={1}
+                                        />
+                                    </motion.div>
                                 </div>
-                            </motion.div>
+                            </motion.a>
                         ))}
 
-                        <motion.div className="border-t border-gray-300 pt-5" variants={rowSlide}>
+                        <motion.div
+                            className="border-t border-gray-300 pt-5"
+                            variants={rowSlide}
+                        >
                             <div className="flex gap-x-2 items-center">
                                 <MapPin />
-                                <h1 className="text-xs md:text-md lg:text-lg font-mono font-semibold text-gray-500 dark:text-gray-200">Philippines</h1>
+                                <h1 className="text-xs md:text-md lg:text-lg font-mono font-semibold text-gray-500 dark:text-gray-200">
+                                    Philippines
+                                </h1>
                                 <Dot />
                                 <h1 className="text-xs md:text-md lg:text-lg font-mono font-semibold text-gray-500 dark:text-gray-200">
                                     Remote-friendly worldwide

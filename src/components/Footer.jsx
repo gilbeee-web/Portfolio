@@ -2,32 +2,39 @@ import { Copyright, Mail } from "lucide-react"
 
 export default function Footer(){
 
+    
+
     const socials = [
-        {
+        { 
             id: 1, 
-            type: "Email",
-            img: Mail,
-            value: "gilbertstamaria58@gmail.com"
+            type: "Email", 
+            img: Mail, 
+            value: "gilbertstamaria58@gmail.com", 
+            link: "mailto:gilbertstamaria58@gmail.com" 
         },
-        {
+        { 
             id: 2, 
-            type: "Facebook",
-            img: "/images/logo/fb.png",
-            value: "https://www.facebook.com/gilbert.stamaria.52"
+            type: "Facebook", 
+            img: "/images/logo/fb.png", 
+            value: "facebook.com/gilbert.stamaria", 
+            link: "https://www.facebook.com/gilbert.stamaria.52" 
         },
-        {
+        { 
             id: 3, 
-            type: "GitHub",
-            img: "/images/logo/github.png",
-            value: "https://github.com/gilbeee-web"
+            type: "GitHub", 
+            img: "/images/logo/github.png", 
+            value: "github.com/gilbeee-web", 
+            link: "https://github.com/gilbeee-web" 
         },
-         {
+        { 
             id: 4, 
-            type: "LinkedIn",
-            img: "/images/logo/linkedin.png",
-            value: "https://www.youtube.com/watch?v=lbSPw7f3FxI&list=RDMMQS04WbSnxok&index=2"
+            type: "LinkedIn", 
+            img: "/images/logo/linkedin.png", 
+            value: "linkedin.com/in/gilbertstamaria", 
+            link: "linkedin.com/in/gilbertstamaria"
         },
-    ]
+    ];
+    
 
     return(
 
@@ -99,15 +106,16 @@ export default function Footer(){
 
                     {
                         socials.map((social) => (
-                            <div 
+                            <a 
                                 className="bg-white border border-gray-200 md:h-8 md:w-8 lg:h-12 lg:w-12 p-2 rounded-full flex items-center justify-center cursor-pointer"
                                 key={social.id}
+                                href={social.link}
                             >
                                 {
                                     social.type === "Email" ? <social.img className="dark:text-black object-contain h-5 w-5 md:w-8 md:h-8  lg:h-10 lg:w-10"/>
                                     : <img src={social.img} alt={`${social.type} logo`}  className="object-contain h-5 w-5 md:w-8 md:h-8 lg:h-10 lg:w-10"/> 
                                 }
-                            </div>
+                            </a>
                         ))
                     }
                     

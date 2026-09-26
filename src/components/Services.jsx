@@ -68,7 +68,7 @@ export default function Services({ id }) {
                 >
                     {services.map((service) => (
                         <motion.div
-                            className="bg-blue-50 rounded-md p-5 border border-gray-100 dark:bg-gray-900"
+                            className="bg-blue-50 rounded-md p-5 border border-gray-100 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300"
                             key={service.id}
                             variants={cardFade}
                             whileHover={{ scale: 1.02 }}
