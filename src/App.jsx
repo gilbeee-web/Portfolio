@@ -14,19 +14,6 @@ export default function App() {
   return (
     <>
 
-      {/* <Navbar />
-    
-      <div className="min-h-screen bg-white p-10 text-gray-900 dark:bg-gray-950 dark:text-white">
-          <h1 className="text-4xl font-bold">
-              Dark Mode Test
-          </h1>
-
-          <p className="mt-4 text-gray-600 dark:text-gray-400">
-              If this text changes when dark mode is enabled, it's working.
-          </p>
-      </div> */}
-    
-
       <div className="min-h-screen font-sans text-[#18181B] scroll-smooth transition-colors duration-300 dark:bg-gray-950 dark:text-white">
 
 

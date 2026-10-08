@@ -93,7 +93,7 @@ export default function Projects({ id }) {
     const projects = [
         {
             id: 1,
-            title: "ELGA Order Management System",
+            title: "Order Management System",
             type: "Personal Project",
             description: "A web-based order management system that helps businesses organize products, orders, payments, and shipping.",
             img: "/images/projects/order-management-system/dashboard.png",
